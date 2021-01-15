@@ -6,6 +6,7 @@
 	--bg: #111;
 	--bglight: #161616;
 	--main: #fff;
+	--mainlight: #ccc;
 	--accent: #ffd700;
 	--accentalpha: #c9aa00bb;
 	--lightcolor: #eee;
@@ -89,9 +90,10 @@ body
 {
 	opacity: 0;
 }
-h1, h2, h3, p
+h1, h2, h3, p, li
 {
 	font-family: 'Barlow';
+	color: var(--main);
 }
 
 .nav
@@ -141,7 +143,7 @@ h1, h2, h3, p
 	left: 0;
 	z-index: -1;
 	filter: brightness(40%);
-	animation: rotating 30s infinite forwards;
+	//animation: rotating 30s infinite forwards;
 }
 .title #img1
 {
@@ -152,6 +154,7 @@ h1, h2, h3, p
 .title #img2
 {
 	background-image: url("https://foreignpolicy.com/wp-content/uploads/2019/05/gettyimages-833466946.jpg?w=1500");
+	left: 100vw;
 	animation-delay: -9s;
 }
 .title #img3
@@ -314,12 +317,33 @@ hr
 	letter-spacing: 0.1em;
 	font-weight: 500;
 }
-.section p
+.section p, .section li 
 {
 	font-size: 20px;
 	font-weight: 100;
 }
 
+.section li 
+{
+	color: var(--mainlight);
+	position: relative;
+	list-style-type: none;
+	padding-left: 25px;
+	margin-left: 20px;
+	font-size: 18px;
+	padding-bottom: 1em;
+}
+.section li:before
+{
+	position: absolute;
+ 	left: 0px;
+	top: 9px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--mainlight);
+	content: '';
+}
 .section .quote
 {
 	text-align: center;
@@ -399,13 +423,14 @@ hr
 
 .button
 {
+	text-decoration: none;
 	padding: 12px 40px;
 	text-transform: uppercase;
 	font-weight: 700;
 	background-color: transparent;
 	border: 2px solid var(--main);
 	font-family: 'Barlow';
-	font-size: 15px;
+	font-size: 14px;
 	letter-spacing: 0.1em;
 	color: var(--main);
 	transition: 0.1s;
@@ -472,6 +497,7 @@ hr
 	width: 60%;
 	padding: 0px 25px;
 	padding-bottom: 30px;
+	
 }
 
 .sixtyfourtysplit .image
@@ -485,11 +511,18 @@ hr
 	box-shadow: inset 0px 0px 40px 10px var(--bglight);
 }
 
-.sixtyfourtysplit #image2
+#image2
 {
 	background-image: url( "https://assets.weforum.org/article/image/iqYYt3r3cWhAyQbGAtCT7h6LBbZ-p8dXgCOrIkdLzvg.JPG" );
-	height: 400px;
+	height: 450px;
 	background-position: -50px 0px;
+}
+
+#image3
+{
+	background-image: url( "https://bencrump.com/wp-content/uploads/2020/08/blog-racial-injustice-in-america-1.jpg" );
+	height: 800px;
+	background-position: cover;
 }
 
 
