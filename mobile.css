@@ -1,0 +1,119 @@
+@media (max-width: 950px )
+{
+	.title h1
+	{
+		font-size: 55px;
+		line-height: 1em;
+		padding-bottom: 10px;
+	}
+	.title h2
+	{
+		font-size: 30px;
+	}
+	.info h2
+	{
+		font-size: 15px;
+	}
+	.info h1
+	{
+		line-height: 1.2em;
+	}
+	
+	.factsec
+	{
+		background-attachment: scroll;
+	}
+	.title .infocontainer
+	{
+		overflow-x: scroll;
+		height: 130px;
+	}
+	.title .img
+	{
+		height: calc( 100vh - 130px);
+	}
+	.title .container
+	{
+		bottom: 130px;
+	}
+	.infocontainer:after
+	{
+		color: var(--main);
+		content: '\203A';
+		font-size:50px;
+		padding-right: 5px;
+		padding-left: 7px;
+		padding-top: 30px;
+		right: 0px;
+		height: 90px;
+		background-color: #0000;
+		position: sticky;
+		display: none;
+	}
+	.infocontainer .info
+	{
+		min-width: 350px;
+		//height: 130px;
+	}
+	
+	.section .quote
+	{
+		font-size: 25px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.section .author
+	{
+		font-size: 15px;
+	}
+	.halfsplit, .sixtyfourtysplit
+	{
+		flex-direction: column-reverse;
+	}
+	.halfsplit .text, .sixtyfourtysplit .text
+	{
+		width: 95%;
+	}
+	.halfsplit .image, .sixtyfourtysplit .image
+	{
+		width: 95%;
+		border-width: 2px;
+	}
+	.halfsplit #image1
+	{
+		height: 400px;
+	}
+	#image2
+	{
+		height: 400px;
+		background-position: 0px 0px;
+	}
+	#whatispoverty
+	{
+		padding: 30px 5vw;
+		padding-bottom: 80px;
+	}
+	.section h1
+	{
+		font-size: 35px;
+	}
+	.section p
+	{
+		font-size: 18px;
+	}
+	
+	.tile
+	{
+		text-align: center;
+	}
+	.tile h1
+	{
+		font-size: 20px;
+	}
+	
+	
+	footer.section h1
+	{
+		font-size: 15px;
+	}
+}
