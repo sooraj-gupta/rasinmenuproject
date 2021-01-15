@@ -105,6 +105,8 @@
 	.tile
 	{
 		text-align: center;
+		width: 45%;
+		min-width: 325px;
 	}
 	.tile h1
 	{
