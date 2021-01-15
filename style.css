@@ -143,7 +143,7 @@ h1, h2, h3, p, li
 	left: 0;
 	z-index: -1;
 	filter: brightness(40%);
-	//animation: rotating 30s infinite forwards;
+	animation: rotating 30s infinite forwards;
 }
 .title #img1
 {
