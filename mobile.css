@@ -74,6 +74,11 @@
 	{
 		width: 95%;
 	}
+	.halfsplit + p
+	{
+		margin-top: 40px;
+		padding: 0px 10px;
+	}
 	.halfsplit .image, .sixtyfourtysplit .image
 	{
 		width: 95%;
@@ -87,6 +92,10 @@
 	{
 		height: 400px;
 		background-position: 0px 0px;
+	}
+	#image3
+	{
+		height: 400px;
 	}
 	#whatispoverty
 	{

@@ -8,12 +8,12 @@
 	--main: #fff;
 	--mainlight: #ccc;
 	--accent: #ffd700;
-	--accentalpha: #c9aa00bb;
+	--accentalpha: #ccc600bb;
 	--lightcolor: #eee;
 }
 
 *{
-	transform: translateZ(0);
+
 }
 
 @keyframes rotating
@@ -79,18 +79,97 @@
 }
 
 
-body, html{
+body,html{
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
 	background-color: var(--bg);
+	height: 100%;
+	position: relative;
 }
 
 body
 {
 	opacity: 0;
 }
-h1, h2, h3, p, li
+.main
+{
+	transition: 0.5s;
+}
+.open .main
+{
+	filter: blur(10px) brightness(50%);
+/*	opacity: 0.5;*/
+}
+#sourcesmenu
+{
+	--margin: 10vw;
+	width: calc( 100vw - var(--margin) );
+	height: calc( 100vh - var(--margin) );
+	position: fixed;
+	bottom: calc( var(--margin)/2 );
+	left: calc( var(--margin)/2 + 0.25vw - 10px);
+	background-color: var(--bg);
+	opacity: 0.99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.open #sourcesmenu 
+{
+	z-index: 10;
+	opacity: 1;
+}
+#sourcesmenu div
+{
+	width: 80vw;
+	height: 100%;
+	padding-top: 10vw;
+}
+#sourcesmenu h1
+{
+	color: var(--main);
+	font-weight: 300;
+	margin: 0;
+}
+#sourcesmenu p
+{
+	color: var(--main);
+	font-weight: 100;
+	padding-bottom: 0px;
+}
+#sourcesmenu a
+{
+	color: var(--accent);
+}
+#sourcesmenu hr
+{
+	margin: 35px 0px;
+}
+
+#sourcesmenu span
+{
+	font-family: 'Times New Roman';
+	content: '\00D7';
+	position: absolute;
+	top: 5px;
+	margin: 0;
+	padding: 0;
+	right: 20px;
+	font-size: 40px;	
+	font-size: 100;
+	color: var(--main);
+}
+#sourcesmenu span:hover
+{
+	cursor: pointer;
+}
+
+h1, h2, h3, p, li, a
 {
 	font-family: 'Barlow';
 	color: var(--main);
@@ -107,7 +186,7 @@ h1, h2, h3, p, li
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: -1;
+	z-index: 20;
 }
 .nav > div
 {
@@ -120,6 +199,12 @@ h1, h2, h3, p, li
 	font-size: 15px;
 	color: var(--main);
 	float: right;
+}
+.nav a{
+	text-decoration: none;
+}
+.nav a:hover {
+	opacity: 0.6;
 }
 
 
@@ -141,9 +226,9 @@ h1, h2, h3, p, li
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 0;
 	filter: brightness(40%);
-	animation: rotating 30s infinite forwards;
+	//animation: rotating 30s infinite forwards;
 }
 .title #img1
 {
@@ -214,7 +299,7 @@ h1, h2, h3, p, li
 	position: absolute;
 	bottom:0;
 	left: 0;
-	z-index: -1;
+	z-index: 0;
 }
 .infocontainer .info
 {
@@ -366,7 +451,7 @@ hr
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-color: var(--bg);
+	background-color: var(--bglight);
 	width: 80px;
 	height: 40px;
 	position: absolute;
@@ -403,6 +488,11 @@ hr
 	padding: 0px 25px;
 	padding-bottom: 30px;
 }
+.halfsplit + p
+{
+	margin-top: 40px;
+	padding: 0px 25px;
+}
 
 .halfsplit .image
 {
@@ -412,7 +502,7 @@ hr
 	background-repeat: no-repeat;
 	margin: 0px 25px;
 	border: 5px solid var(--accent);
-	box-shadow: inset 0px 0px 100px 40px var(--bglight);
+	box-shadow: inset 0px 0px 100px 35px var(--bglight);
 	
 }
 .halfsplit #image1
@@ -456,8 +546,12 @@ hr
 {
 	background-image: url("https://cdni.rt.com/files/2015.09/article/560419a1c46188a6798b458a.jpg");
 }
+#fact2
+{
+	background-image: url("https://businessfightspoverty.org/wp-content/uploads/2020/06/iStock-620697086_homepage.jpg");
+}
 
-#fact1 div
+.factsec div
 {
 	padding: 30px 5vw;
 	display: flex;
@@ -508,7 +602,7 @@ hr
 	background-repeat: no-repeat;
 	margin: 0px 25px;
 	border: 5px solid var(--accent);
-	box-shadow: inset 0px 0px 40px 10px var(--bglight);
+	box-shadow: inset 0px 0px 100px 25px var(--bglight);
 }
 
 #image2
@@ -521,7 +615,7 @@ hr
 #image3
 {
 	background-image: url( "https://bencrump.com/wp-content/uploads/2020/08/blog-racial-injustice-in-america-1.jpg" );
-	height: 800px;
+	height: 700px;
 	background-position: cover;
 }
 
@@ -582,6 +676,13 @@ hr
 	color: var(--main);
 	margin: 0;
 	
+}
+
+#sources
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 footer
