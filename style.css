@@ -89,9 +89,56 @@
 		opacity: 1;
 	}
 }
+@keyframes displayfadein
+{
+	0%
+	{
+		display: none;
+	}
+	1%{
+		opacity: 0;
+		display: flex;
+	}
+	100%
+	{
+		opacity: 1;
+		display: flex;
+	}
+}
+@keyframes displayfadeout
+{
+	0%
+	{
+		opacity: 1;
+		display: block;
+	}
+	1%{
+		opacity: 0;
+		display: block;
+	}
+	100%
+	{
+		opacity: 0;
+		display: none;
+	}
+}
 
+@keyframes bobside
+{
+	0%{
+		transform: translateX(-5px);
+	}
+	50%{
+		transform: translateX(5px);
+	}
+	100%
+	{
+		transform: translateX(-5px)
+	}
+}
 
 body,html{
+	scroll-behavior: smooth;
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
@@ -182,7 +229,7 @@ body
 	cursor: pointer;
 }
 
-h1, h2, h3, p, li, a
+h1, h2, h3, p, li, a, div
 {
 	font-family: 'Barlow';
 	color: var(--main);
@@ -204,14 +251,27 @@ h1, h2, h3, p, li, a
 .nav > div
 {
 	width: 100%;
-	padding: 0px 25px;
+	padding: 0px 2vw;
+	position: relative;
 }
 .nav h2
 {	
+	display: inline-block;
 	font-weight: 100;
 	font-size: 15px;
 	color: var(--main);
 	float: right;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.nav input{
+	padding-right: 10px;
+	display: inline-block;
+}
+.nav input:checked{
+	background-color: #000;;
+	background-image: none;
 }
 .nav a{
 	text-decoration: none;
@@ -220,12 +280,90 @@ h1, h2, h3, p, li, a
 	opacity: 0.6;
 }
 
+#menubtn
+{
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 20px;
+	transition: 0.1s;
+}
+#toggler
+{
+	user-select: none;
+	
+	border-radius: 5px;
+	transition: 0.1s;
+}
+#toggler:hover
+{
+	background-color: #0004;
+	cursor: pointer;
+}
+#toggler.toggled
+{
+	background-color: #0006;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#toggler.toggled #menubtn
+{
+	transform: scaleY(-1) translateY(-5px);
+}
+
+#menu
+{
+	display: none;
+	opacity: 0;
+	position: absolute;
+	top: 43px;
+	background-color: #0006;
+	padding: 0px 0px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	transition: all 0.2s; 
+}
+.toggled + #menu
+{
+	display: flex;
+	flex-direction: column;
+	animation: displayfadein 0.3s forwards;
+}
+#menu a
+{
+	display: inline-block;
+	transition: 0.1s;
+	font-weight: 100;
+	padding: 8px 15px;
+	list-style: none;
+}
+.nav #menu a:hover {
+	opacity: 1;
+}
+#menu a:first-child
+{
+	border-top-right-radius: 5px;
+}
+#menu a:last-child
+{
+	border-top: 1px solid #fff3;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-bottom: 10px;
+}
+
+#menu a:hover
+{
+	cursor: pointer;
+	background-color: #000a;
+}
 
 .title
 {
 	width: 100%;
 	height: calc( 100vh - 0px);
 	position: relative;
+	z-index: 0;
 }
 
 .title .img
@@ -245,33 +383,28 @@ h1, h2, h3, p, li, a
 }
 .title #img1
 {
-	background-image: url("https://images.unsplash.com/photo-1594708767771-a7502209ff51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
 	animation-delay: -15s;
 	
 }
 .title #img2
 {
-	background-image: url("https://foreignpolicy.com/wp-content/uploads/2019/05/gettyimages-833466946.jpg?w=1500");
 	left: 100vw;
 	animation-delay: -9s;
 }
 .title #img3
 {
-	background-image: url("https://images.unsplash.com/photo-1529520161780-2573a0926b31");
 	animation-delay: -3s;
 	left: 200vw;
 	
 }
 .title #img4
 {
-	background-image: url("https://www.policyforum.net/wp-content/uploads/2018/10/Getting-the-real-measure-of-poverty-2-cropped.jpg");
 	left: -100vw;
 	animation-delay: 3s;
 	
 }
 .title #img5
 {
-	background-image: url("https://oecddevelopmentdialogue.files.wordpress.com/2019/03/poverty-dit-facts.jpg");
 	left: 100vw;
 	animation-delay: 9s;
 	
@@ -380,6 +513,17 @@ h1, h2, h3, p, li, a
 	display: block;
 	font-size: 13px;
 	color: var(--bg);
+}
+
+#swipe
+{
+	position: absolute;
+	color: white;
+	right: 10px;
+	font-weight: 200;
+	bottom: 55px;
+	transition: 0.3s;
+	animation: bobside 1s infinite;
 }
 
 hr
@@ -520,7 +664,6 @@ hr
 }
 .halfsplit #image1
 {
-	background-image: url("https://img.jakpost.net/c/2019/04/20/2019_04_20_70417_1555751047._large.jpg");
 	height: 450px;
 }
 
@@ -529,12 +672,12 @@ hr
 	text-decoration: none;
 	padding: 12px 40px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 400;
 	background-color: transparent;
 	border: 2px solid var(--main);
 	font-family: 'Barlow';
-	font-size: 14px;
-	letter-spacing: 0.1em;
+	font-size: 12.5px;
+	letter-spacing: 0.3em;
 	color: var(--main);
 	transition: 0.1s;
 }
@@ -543,6 +686,7 @@ hr
 	background-color: var(--main);
 	color: var(--bg);
 	cursor: pointer;
+	font-weight: 500;
 }
 .factsec
 {
@@ -555,14 +699,8 @@ hr
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
-#fact1
-{
-	background-image: url("https://cdni.rt.com/files/2015.09/article/560419a1c46188a6798b458a.jpg");
-}
-#fact2
-{
-	background-image: url("https://businessfightspoverty.org/wp-content/uploads/2020/06/iStock-620697086_homepage.jpg");
-}
+
+
 
 .factsec div
 {
@@ -572,6 +710,7 @@ hr
 	align-items: center;
 	flex-direction: column;
 	background-color: var(--accentalpha);
+	z-index: 10;
 }
 
 
@@ -620,7 +759,6 @@ hr
 
 #image2
 {
-	background-image: url( "https://assets.weforum.org/article/image/iqYYt3r3cWhAyQbGAtCT7h6LBbZ-p8dXgCOrIkdLzvg.JPG" );
 	height: 450px;
 	background-position: -50px 0px;
 }

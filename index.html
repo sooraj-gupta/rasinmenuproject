@@ -7,22 +7,29 @@
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body>
+	<body onload = "load();">
 		
 		<div class = "main">
 			<section class = "nav">
 				<div>
-					<h2 style = "float:left">Rasin Menu Project</h2>
-					<h2 ><a href = "https://github.com/sooraj-gupta/rasinmenuproject/">View Code</a></h2>
+					<h2 id = "toggler" class = "untoggled" style = "float:left"><span id = "menubtn">&#x25BE;</span>Rasin Menu Project</h2>
+					<div id = menu>
+						<a href = "#whatispoverty">What Is Poverty</a>
+						<a href = "#covid">Poverty During COVID-19</a>
+						<a href = "#causes">Causes For Global Poverty</a>
+						<a href = "#racialbias">Racial Bias in Poverty</a>
+						<a href = "#quotes">Famous Quotes About Poverty</a>
+						<a href = "https://github.com/sooraj-gupta/rasinmenuproject/">View Code</a>
+					</div>
 				</div>
 			</section>
 			<section class = "title">
 
-				<div class = "img" id = "img1"></div>
-				<div class = "img" id = "img2"></div>
-				<div class = "img" id = "img3"></div>
-				<div class = "img" id = "img4"></div>
-				<div class = "img" id = "img5"></div>
+				<div class = "img" id = "img1" tar = "https://images.unsplash.com/photo-1594708767771-a7502209ff51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"></div>
+				<div class = "img" id = "img2" tar = "https://foreignpolicy.com/wp-content/uploads/2019/05/gettyimages-833466946.jpg?w=1500"></div>
+				<div class = "img" id = "img3" tar = "https://images.unsplash.com/photo-1529520161780-2573a0926b31"></div>
+				<div class = "img" id = "img4" tar = "https://www.policyforum.net/wp-content/uploads/2018/10/Getting-the-real-measure-of-poverty-2-cropped.jpg"></div>
+				<div class = "img" id = "img5" tar = "https://oecddevelopmentdialogue.files.wordpress.com/2019/03/poverty-dit-facts.jpg"></div>
 
 				<div class = "container">
 					<h1 id = "">A Societal Issue</h1>
@@ -52,6 +59,7 @@
 						</div>
 					</button>
 				</div>
+				<div id = "swipe">Swipe &#x25B8;</div>
 
 			</section>
 
@@ -65,7 +73,7 @@
 			<section id = "whatispoverty" class = "section">
 				<div class = "container">
 					<div class = "halfsplit">
-						<div class = "image" id = "image1">
+						<div class = "image" id = "image1" tar = "https://img.jakpost.net/c/2019/04/20/2019_04_20_70417_1555751047._large.jpg">
 						</div>
 						<div class = "text">
 							<h1>What is <span style = "color: var(--accent)">Poverty?</span></h1>
@@ -78,7 +86,7 @@
 				</div>
 			</section>
 
-			<section class = "section factsec" id = "fact1">
+			<section class = "section factsec" id = "fact1" tar = "https://cdni.rt.com/files/2015.09/article/560419a1c46188a6798b458a.jpg">
 				<div>
 					<h1 class = "fact"><span style = "color:var(--bg)">NEARLY 10 PERCENT</span> of the world's population live in extreme poverty, below the $1.90 per day poverty line.</h1>
 					<h2 class = "author">Source: World Bank</h2>
@@ -94,9 +102,9 @@
 							<br><br>
 							The impacts of the pandemic and the economic fallout have been widespread, but are particularly prevalent among Black, Latino, Native American, and immigrant households. These disproportionate impacts reflect harsh, longstanding inequities &mdash; often stemming from structural racism &mdash; in education, employment, housing, and health care that the current crisis is exacerbating.</p>
 							<br>
-							<a href = "https://www.cdc.gov/coronavirus/2019-ncov/" class = "button">Learn More About COVID-19</a>
+							<a href = "https://www.cdc.gov/coronavirus/2019-ncov/" class = "button">More on COVID-19</a>
 						</div>
-						<div class = "image" id = "image2">
+						<div class = "image" id = "image2" tar = "https://assets.weforum.org/article/image/iqYYt3r3cWhAyQbGAtCT7h6LBbZ-p8dXgCOrIkdLzvg.JPG">
 						</div>
 					</div>
 				</div>
@@ -152,7 +160,7 @@
 				</div>
 			</section>
 
-			<section class = "section light">
+			<section class = "section light" id = "racialbias">
 				<div class = "container">
 					<div class = "halfsplit">
 						<div class = "image" id  = "image3">
@@ -174,7 +182,7 @@
 
 			</section>
 
-			<section class = "section factsec" id = "fact2">
+			<section class = "section factsec" id = "fact2" tar = "https://businessfightspoverty.org/wp-content/uploads/2020/06/iStock-620697086_homepage.jpg">
 				<div>
 					<h1 class = "fact"> In 2019, <span style = "color:var(--bg)">18.8% of Black people</span> living in the United States were living below the poverty line. This is compared to 7.3% of White people, and 7.3% of Asian people.</h1>
 					<h2 class = "author">Source: Statista</h2>
@@ -206,11 +214,24 @@
 				
 			</section>
 
+			<section class = "section">
+				<div class="container">
+					<h1 style = "text-align: center;">What We Can Do To <span style = "color: var(--accent)">Help</span></h1>
+					<div id = "set-height"></div>
+		<video id = "v" autobuffer = "autobuffer" preload="preload" muted>
+			
+<!--			<source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="../../../otherstuffandphotos/photoandvideos/evodyneacademy/roboticarmandcar/Evodyne_Academy_Facebook_Robotic_Arm_Video.mov"  />-->
+		
+		</video>
+				</div>
+			</section>
+			
 			<section class = "section light" id = "sources">
 				<button class = "button" onclick = 'viewSources();'> View Sources </button>
 			</section>
+			
 			<footer class = "section">
-				<h1>Website Designed By: Sooraj Gupta</h1>
+				<h1 style = "letter-spacing: 1px;">Website Designed By: Sooraj Gupta</h1>
 				<h2>Copyright &copy; 2021 Sooraj Gupta</h2>
 			</footer>
 		</div>
@@ -226,6 +247,7 @@
 				<span onclick = "viewSources();">&times;</span>
 			</div>
 		</div>
+
 		<style>  body{ animation: fade 1s forwards;}  </style>
 		<script src = "main.js">
 		</script>
