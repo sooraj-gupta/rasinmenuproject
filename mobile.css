@@ -1,5 +1,9 @@
 @media (max-width: 950px )
 {
+	#menu
+	{
+		top: 42.5px;
+	}
 	.title h1
 	{
 		font-size: 55px;
@@ -54,6 +58,14 @@
 	{
 		min-width: 350px;
 		//height: 130px;
+	}
+	#swipe
+	{
+		display: block;
+	}
+	#menubtn
+	{
+		margin-right: 10px;
 	}
 	
 	.section .quote
