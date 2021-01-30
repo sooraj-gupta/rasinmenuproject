@@ -15,6 +15,7 @@ var go = ( str ) =>
 {
 	var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";
 	var URL = "https://dictionary.com/browse/"+str.innerHTML;
+	if( window.innerWidth > 800 )
 	window.open(URL, "_blank", strWindowFeatures);
 }
 
