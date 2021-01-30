@@ -455,6 +455,7 @@ h1, h2, h3, p, li, a, div
 {
 	width: 100%;
 	height: 120px;
+	-webkit-overflow-scrolling: touch;
 	display: flex;
 	position: absolute;
 	bottom:0;
