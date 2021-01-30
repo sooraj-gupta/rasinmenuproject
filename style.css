@@ -93,6 +93,7 @@
 {
 	0%
 	{
+		transform: translateY( 10px );
 		display: none;
 	}
 	1%{
@@ -101,6 +102,7 @@
 	}
 	100%
 	{
+		transform: translateY( 0px );
 		opacity: 1;
 		display: flex;
 		transform: scaleY(1);
@@ -113,7 +115,7 @@
 		opacity: 1;
 		display: block;
 	}
-	1%{
+	99%{
 		opacity: 0;
 		display: block;
 	}
@@ -313,7 +315,7 @@ h1, h2, h3, p, li, a, div
 
 #menu
 {
-	transform: scaleY(0.95);
+/*	transform: scaleY(0.95);*/
 	transform-origin: 0 0;	
 	display: none;
 	flex-direction: column;
@@ -329,20 +331,20 @@ h1, h2, h3, p, li, a, div
 .toggled + #menu
 {
 	display: flex;
-	animation: displayfadein 0.2s forwards;
+	animation: displayfadein 0.5s both;
 }
 #menu a
 {
 	display: inline-block;
-	transition: 0.1s;
+	transition: 0.2s;
 	font-weight: 100;
 	padding: 7px 15px;
 	padding-bottom: 9px;
 	list-style: none;
+	opacity: 0;
+	
 }
-.nav #menu a:hover {
-	opacity: 1;
-}
+
 #menu a:first-child
 {
 	border-top-right-radius: 5px;
@@ -360,6 +362,13 @@ h1, h2, h3, p, li, a, div
 	cursor: pointer;
 	background-color: #000a;
 }
+
+.toggled + #menu a
+{
+	transform: translateY( 0px );
+	animation: displayfadein 0.4s forwards;
+}
+
 
 .title
 {
@@ -467,8 +476,14 @@ h1, h2, h3, p, li, a, div
 	margin: 0;
 	transition: 0.05s;
 	text-align: left;
+	transition: 0.2s;
 }
 
+.info *
+{
+	transition: opacity 0.15s;
+
+}
 .info div
 {
 	width: 100%;
@@ -668,9 +683,37 @@ hr
 	box-shadow: inset 0px 0px 100px 35px var(--bglight);
 	
 }
-.halfsplit #image1
+#image1
 {
 	height: 450px;
+	background-size: 150%;
+}
+
+#image2
+{
+	height: 450px;
+	background-position: 30% 50%;
+	background-size: 160%;
+}
+#image3
+{
+	height: 700px;
+	background-size: 200%;
+}
+
+
+
+.image
+{
+	transition: 0.2s;
+}
+.image:hover, #image1:hover,  #image2:hover
+{
+	background-size: 180%;
+}
+ #image3:hover
+{
+	background-size: 230%;
 }
 
 .button
@@ -685,7 +728,7 @@ hr
 	font-size: 12.5px;
 	letter-spacing: 0.3em;
 	color: var(--main);
-	transition: 0.1s;
+	transition: 0.2s;
 }
 .button:hover
 {
@@ -707,6 +750,17 @@ hr
 }
 
 
+.hover
+{
+	transition: 0.15s;
+	display: inline-block;
+}
+.hover:hover
+{
+	font-weight: 100;
+	transform: scale(1.04);
+	color: var(--accent);
+}
 
 .factsec div
 {
@@ -763,19 +817,6 @@ hr
 	box-shadow: inset 0px 0px 100px 25px var(--bglight);
 }
 
-#image2
-{
-	height: 450px;
-	background-position: -50px 0px;
-}
-
-#image3
-{
-	background-image: url( "https://bencrump.com/wp-content/uploads/2020/08/blog-racial-injustice-in-america-1.jpg" );
-	height: 700px;
-	background-position: cover;
-}
-
 
 #causes
 {
@@ -817,6 +858,11 @@ hr
 {
 	font-size: 100px;
 	color: var(--accent);
+	transition: 0.2s;
+}
+.tile i:hover
+{
+	transform: scale(1.1);
 }
 .tile h1
 {
@@ -846,7 +892,6 @@ hr
 .cards
 {
 	justify-content: space-between;
-
 }
 
 
@@ -857,11 +902,12 @@ hr
 	background-color: var(--bg);
 	box-shadow: 10px 10px 50px 20px black;
 	width: 100%;
-	height: 400px;
+	height: 250px;
 	margin: 30px;
 	position: relative;
-	padding: 30px 35px;
+	padding: 70px 35px;
 	transition: 0.2s;
+	padding-top: 170px;
 }
 .card:hover
 {
@@ -869,23 +915,42 @@ hr
 }
 .card *
 {
-	
 	text-align: center;
+}
+.card div
+{
+	position: absolute;
+	top: 50px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	border-radius: 1000px;
+	margin-bottom: 15px
 }
 .card p
 {
 	font-size: 20px;
-	padding-bottom: 30px;
+	padding-bottom: 15px;
 }
 .card h1
 {
+	position: absolute;
+	bottom: 75px;
 	font-size: 30px;
 	letter-spacing: 1px;
 	margin: 0;
 	opacity: 0.4;
+	left: 0;
+	width: 100%;
 }
 .card h2
 {
+	left: 0;
+	width: 100%;
+	position: absolute;
+	bottom: 50px;
 	margin: 0;
 	opacity: 0.4;
 	font-size: 15px;

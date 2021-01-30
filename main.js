@@ -1,8 +1,35 @@
-var open = false;
+var menuItems = document.querySelectorAll("#menu a");
+menuItems.forEach(
+		function( currentValue, currentIndex ){
+				currentValue.style.animationDelay = (currentIndex*0.04) + 0.02 + "s";
+		},
+);
+
+
+function wrapWords(str, tmpl) {
+	var s = `<span class = 'hover' onclick = 'go(this)'>$&</span>`
+  	return str.replace(/\S+/g, tmpl || s );
+}
+
+var go = ( str ) =>
+{
+	var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";
+	var URL = "https://dictionary.com/browse/"+str.innerHTML;
+	window.open(URL, "_blank", strWindowFeatures);
+}
+
+document.querySelectorAll(".text p, .halfsplit + p").forEach(
+	function( currentValue ){
+		currentValue.innerHTML = wrapWords( currentValue.innerHTML );
+	}
+);''
+
+
+var opened = false;
 function viewSources()
 {
 	document.body.classList.toggle("open")
-	open = !open;
+	opened = !opened;
 }
 document.getElementById( "sources" ).onclick = function(event)
 {
@@ -10,7 +37,7 @@ document.getElementById( "sources" ).onclick = function(event)
 }
 document.body.onclick = function()
 {
-	if( open )
+	if( opened )
 	{
 		viewSources();
 	}
@@ -46,17 +73,6 @@ document.getElementsByClassName("infocontainer")[0].onscroll = () =>
 		document.getElementById("swipe").style.opacity = 0;
 	}
 }
-setInterval( () => 
-{
-	if(document.getElementById("set-height").getBoundingClientRect().top < 0 )
-	{
-		document.getElementById( "v" ).style.position = "fixed";
-	}
-	else
-	{
-		document.getElementById( "v" ).style.position = "absolute";
-	}
-}, 100);
 
 document.getElementById( "toggler" ).onclick = function( e )
 {
