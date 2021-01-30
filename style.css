@@ -32,49 +32,49 @@
 {
 	0%
 	{
-		left: 200vw;
+		transform: translateX( 200vw );
 	}
 	10%
 	{
-		left: 200vw;
+		transform: translateX( 200vw );
 	}
 	20%
 	{
-		left: 200vw;
+		transform: translateX( 200vw );
 	}
 	30%
 	{
-		left: 100vw;
+		transform: translateX( 100vw );
 	}
 	40%
 	{
-		left: 100vw;
+		transform: translateX( 100vw );
 	}
 	
 	50%
 	{
-		left: -0vw;
+		transform: translateX( 0px );
 	}
 	
 	60%
 	{
-		left: -0vw;
+		transform: translateX( 0px );
 	}
 	70%
 	{
-		left: -100vw;
+		transform: translateX( -100vw );
 	}
 	80%
 	{
-		left: -100vw;
+		transform: translateX( -100vw );
 	}
 	90%
 	{
-		left: -200vw;
+		transform: translateX( -200vw );
 	}
 	100%
 	{
-		left: -200vw;
+		transform: translateX( -2100vw );
 	}
 }
 
@@ -144,7 +144,6 @@ body,html{
 	margin: 0;
 	overflow-x: hidden;
 	background-color: var(--bg);
-	height: 100%;
 	position: relative;
 }
 
@@ -392,24 +391,26 @@ h1, h2, h3, p, li, a, div
 }
 .title #img2
 {
-	left: 100vw;
+	transform: translateX( 100vw );
 	animation-delay: -9s;
+	
 }
 .title #img3
 {
 	animation-delay: -3s;
-	left: 200vw;
+	transform: translateX( 200vw );
 	
 }
 .title #img4
 {
-	left: -100vw;
+	
+	transform: translateX( -100vw );
 	animation-delay: 3s;
 	
 }
 .title #img5
 {
-	left: 100vw;
+	transform: translateX( 100vw );
 	animation-delay: 9s;
 	
 }
@@ -962,3 +963,14 @@ footer h2
 }
 
 
+
+#video
+{
+	position: relative;
+}
+
+video{
+	position: absolute;
+	top: 10px; 
+	width: 100%
+}
