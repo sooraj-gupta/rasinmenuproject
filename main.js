@@ -5,6 +5,11 @@ menuItems.forEach(
 		},
 );
 
+window.addEventListener("load", function(){
+	document.body.style.animation = "fade 1s forwards 0s";
+	
+}) 
+
 //var slideshowimgs = document.querySelectorAll(".title .img");
 //slideshowimgs.forEach( 
 //	function( currentValue ){

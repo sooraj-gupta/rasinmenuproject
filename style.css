@@ -295,7 +295,7 @@ h1, h2, h3, p, li, a, div
 	user-select: none;
 	
 	border-radius: 5px;
-	transition: 0.1s;
+	transition: background-color 0.15s, border-radius 0.5s;
 }
 #toggler:hover
 {
@@ -894,7 +894,7 @@ hr
 
 .cards
 {
-	justify-content: space-between;
+	justify-content: center;
 }
 
 
@@ -987,12 +987,16 @@ hr
 	align-items: center;
 	position: relative;
 	border-bottom: 2px solid white;
-	padding: 80px 0px;
+	padding: 50px 0px;
 /*	border: 1px solid white;*/
+}
+.row:last-of-type
+{
+	border-bottom: none;
 }
 .row div
 {
-	padding-left: calc( 10vw + 20px );
+	padding-left: 35px;
 	width: 100%;
 	transition: 0.2s;
 /*	border: 1px solid white;*/
@@ -1000,11 +1004,12 @@ hr
 .row h1
 {
 	color: var(--accent);
-	position: absolute;
 	left: 0;
 	font-size: 200px;
 	transition: 0.2s;
 /*	border: 1px solid white;*/
+	padding-bottom: 15px;
+	margin: 0;
 }
 .row:hover h1
 {

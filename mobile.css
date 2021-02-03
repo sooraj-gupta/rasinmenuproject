@@ -129,11 +129,11 @@
 	}
 	.section .row h1
 	{
-		font-size: calc( 330px - 14vw  );
+		font-size: calc( 280px - 14vw  );
 	}
 	.row div
 	{
-		padding-left: calc( 210px - 9vw );
+		padding-left: 28px;
 	}
 	.section p
 	{
