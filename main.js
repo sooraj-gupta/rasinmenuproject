@@ -1,10 +1,16 @@
 var menuItems = document.querySelectorAll("#menu a");
 menuItems.forEach(
 		function( currentValue, currentIndex ){
-				currentValue.style.animationDelay = (currentIndex*0.04) + 0.02 + "s";
+				currentValue.style.animationDelay = (currentIndex*0.03) + 0.015 + "s";
 		},
 );
 
+//var slideshowimgs = document.querySelectorAll(".title .img");
+//slideshowimgs.forEach( 
+//	function( currentValue ){
+//		currentValue.style.animationDelay( "")
+//	}
+//);
 
 function wrapWords(str, tmpl) {
 	var s = `<span class = 'hover' onclick = 'go(this)'>$&</span>`

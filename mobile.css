@@ -32,9 +32,7 @@
 	}
 	.title .infocontainer
 	{
-		transform: translate3d(0,0,0);
-  		-webkit-transform: translate3d(0,0,0);
-		overflow-x: scroll;
+		overflow-x:auto;
 		-webkit-overflow-scrolling: touch;
 		height: 130px;
 	}
@@ -105,24 +103,37 @@
 	.halfsplit #image1
 	{
 		height: 400px;
+		background-size: cover;
 	}
+	
 	#image2
 	{
 		height: 400px;
 		background-position: 0px 0px;
+		background-size: cover;
 	}
 	#image3
 	{
 		height: 400px;
+		background-size: cover;
 	}
 	#whatispoverty
 	{
 		padding: 30px 5vw;
 		padding-bottom: 80px;
+		
 	}
 	.section h1
 	{
 		font-size: 35px;
+	}
+	.section .row h1
+	{
+		font-size: calc( 330px - 14vw  );
+	}
+	.row div
+	{
+		padding-left: calc( 210px - 9vw );
 	}
 	.section p
 	{
