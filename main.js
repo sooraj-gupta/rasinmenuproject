@@ -6,7 +6,11 @@ menuItems.forEach(
 );
 
 window.addEventListener("load", function(){
-	document.body.style.animation = "fade 1s forwards 0s";
+	setTimeout( function(){
+		document.getElementById("preloader").style.opac = "0";
+		document.getElementById("preloader").style.zIndex = "-1";
+		document.getElementsByClassName("main")[0].style.animation = "fade 1s forwards 0s";
+	}, 4000);
 	
 }) 
 
