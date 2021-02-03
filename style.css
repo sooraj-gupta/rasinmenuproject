@@ -1045,15 +1045,25 @@ hr
 	z-index: 11;
 	font-weight: 100;
 	transition: zindex 0.4s, opacity 0.3s;
-	opacity: 1;
+	opacity: 0;
 }
 #preloader h1
 {
 	font-weight: 100;
+	font-size: calc( 5vw + 10px );
 	color: var(--accent);
+	margin: 0;
+}
+#preloader p
+{
+	font-size: 12px;
+	margin: 5px;
+	opacity: 0.5;
 }
 #preloader h2
 {
+	transition: 0.1s;
+	margin-top: 50px;
 	font-weight: 100;
 }
 #preloader span

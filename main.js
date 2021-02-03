@@ -7,10 +7,19 @@ menuItems.forEach(
 
 window.addEventListener("load", function(){
 	setTimeout( function(){
-		document.getElementById("preloader").style.opac = "0";
-		document.getElementById("preloader").style.zIndex = "-1";
-		document.getElementsByClassName("main")[0].style.animation = "fade 1s forwards 0s";
-	}, 4000);
+		document.querySelector( "#preloader h2").style.opacity = "0";
+		setTimeout( function() {
+			document.querySelector( "#preloader h2").innerHTML = "Success!";
+			setTimeout( function() {
+			document.querySelector( "#preloader h2").style.opacity = "1";
+			}, 10);
+		}, 120);
+		setTimeout( function() {
+			document.getElementById("preloader").style.opac = "0";
+			document.getElementById("preloader").style.zIndex = "-1";
+			document.getElementsByClassName("main")[0].style.animation = "fade 1s forwards 0s";
+		}, 600 );
+	}, 5000);
 	
 }) 
 
